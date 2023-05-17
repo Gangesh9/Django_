@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+
+{% block body %}
+this is about us
+{{title}}
+<div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://source.unsplash.com/1300x600/?himachal" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://source.unsplash.com/1300x600/?mounts" class="d-block w-100" alt="...">
+    </div>
+  </div>
+<table border='1' cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+    {% for d in student_details%}
+    <tr>
+        <td>{{d.name}}</td>
+        <td>{{d.phone}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+    {% for n in clist %}
+        <div>{{n}}</div>
+        {% comment %} {% if n == 20 %}
+            <div>{{n}}</div>
+        {% endif %} {% endcomment %}
+    {% endfor %}
+
+{% endblock body %}
